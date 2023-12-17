@@ -14,14 +14,10 @@ namespace DemoEF.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-
-            if (!optionsBuilder.IsConfigured)
-            {
-                var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-                IConfigurationRoot configurationRoot = builder.Build();
-                var connectionString = configurationRoot.GetConnectionString("MyDatabaseConnection");
-                optionsBuilder.UseSqlServer(connectionString);
-            }
+            var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            IConfigurationRoot config = builder.Build();
+            var conString = config.GetConnectionString("MyDbConnectionString");
+            optionsBuilder.UseSqlServer(conString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
