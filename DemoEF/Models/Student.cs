@@ -12,5 +12,7 @@ namespace DemoEF.Models
         [MaxLength(50)]
         public string studentName { get; set; }
         public bool IsActive { get; set; }
+        [Range(6,18)]
+        public int studentage { get; set; }
     }
 }

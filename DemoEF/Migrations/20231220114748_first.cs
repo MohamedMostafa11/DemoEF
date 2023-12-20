@@ -5,7 +5,7 @@
 namespace DemoEF.Migrations
 {
     /// <inheritdoc />
-    public partial class frist : Migration
+    public partial class first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

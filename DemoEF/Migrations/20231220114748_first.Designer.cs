@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DemoEF.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20231217090102_frist")]
-    partial class frist
+    [Migration("20231220114748_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
